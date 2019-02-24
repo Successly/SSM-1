@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+联系
+<input type="button" value="Get提交" id="GetSend"/>
+<input type="button" value="Post提交" id="PostSend"/>
+增加
+<input type="button" value="insertPost提交" id="insertPost"/>
+<input type="button" value="insertGet提交" id="insertGet"/>
+</body>
+<script src='js/jquery-1.4.4.min.js'></script>
+<script>
+$('#GetSend').click(function(){
+	var params={"name":"chen","sex":"啊实打实大所多男","age":"20"}
+    $.ajax({
+        type: "get",
+        url: "/springmvc-mybatis/queryuser",
+        data:params , 
+       /*  dataType: "json", */
+        success: function(data){
+                   
+                 }
+    });
+});
+$('#PostSend').click(function(){
+	var params={"name":"chen","sex":"啊实打实大所多男","age":"20"}
+    $.ajax({
+        type: "post",
+        url: "/springmvc-mybatis/queryuser",
+        data:params , 
+       /*  dataType: "json", */
+        success: function(data){
+                   
+                 }
+    });
+});
+/* 添加	 */
+$('#insertGetSend').click(function(){
+		var params={"name":"chen","sex":"啊实打实大所多男","age":"20"}
+	    $.ajax({
+	        type: "get",
+	        url: "/springmvc-mybatis/saveItems",
+	        data:params , 
+	       /*  dataType: "json", */
+	        success: function(data){
+	                   
+	                 }
+	    });
+	});
+$('#insertPostSend').click(function(){
+		var params={"name":"chen","sex":"啊实打实大所多男","age":"20"}
+	    $.ajax({
+	        type: "post",
+	        url: "/springmvc-mybatis/queryuser",
+	        data:params , 
+	       /*  dataType: "json", */
+	        success: function(data){
+	                   
+	                 }
+	    });
+});
+</script>
+</html>
